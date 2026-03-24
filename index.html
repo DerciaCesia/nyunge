@@ -32,7 +32,8 @@
   /* Decorative corner lines */
   body::before, body::after {
     content: '';
-    position: fixed;
+    display: none;
+    position: absolute;
     width: 60px;
     height: 60px;
     pointer-events: none;
@@ -59,6 +60,7 @@
 
   /* Top corner right */
   .corner-tr, .corner-bl {
+    display: none;
     position: absolute;
     width: 60px; height: 60px;
     pointer-events: none;
@@ -364,6 +366,8 @@
 
 
   @media (max-width: 600px) {
+    body::before, body::after { display: none; }
+    .corner-tr, .corner-bl { display: none; }
     .page { padding: 32px 24px 32px; }
     .brand-name { font-size: 30px; letter-spacing: 8px; }
     .content-grid { grid-template-columns: 1fr; gap: 20px 0; }
@@ -508,4 +512,9 @@
     </div>
 
     <div class="email-note">Share your email with us — receive exclusive pre-launch announcements &amp; invitations.</div>
-    <div class="email-note" style="margin-top:6px;"><a href="mailto:info@nyunge.com.au" style="color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;">info@nyunge.com.au</a></div>
+    <div class="email-note" style="margin-top:8px;"><a href="mailto:info@nyunge.com.au" style="color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;">info@nyunge.com.au</a></div>
+  </div>
+
+</div>
+</body>
+</html>
