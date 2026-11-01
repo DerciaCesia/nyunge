@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We'll be back soon!</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      --deep: #0f2428;
+      --teal: #1d4a52;
+      --gold: #e0b25a;
+      --blush: #f1d9d3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--blush);
+      background:
+        radial-gradient(ellipse at 50% 0%, var(--teal) 0%, transparent 70%),
+        var(--deep);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Photo: keeps its natural proportions, never stretched */
+    .photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      max-height: 68vh;
+      overflow: hidden;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;          /* crops, never squashes */
+      object-position: 50% 65%;   /* keeps the person and shirt in view */
+      display: block;
+    }
+
+    /* Photo melts into the background below */
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 55%;
+      background: linear-gradient(to bottom, rgba(15, 36, 40, 0) 0%, var(--deep) 100%);
+    }
+
+    .message {
+      position: relative;
+      text-align: center;
+      padding: 0 24px 72px;
+      margin-top: -64px;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: #fff;
+    }
+
+    .line {
+      width: 64px;
+      height: 2px;
+      background: var(--gold);
+      margin: 22px auto;
+      border: 0;
+    }
+
+    p {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--blush);
+    }
+
+    @media (max-width: 600px) {
+      .photo { aspect-ratio: 4 / 5; max-height: 60vh; }
+      .photo img { object-position: 62% 70%; }
+      .message { margin-top: -48px; padding-bottom: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="photo">
+    <img src="maintenance.jpg" alt="A woman in a teal t-shirt with a mask print, reaching toward a tree branch in a park">
+  </div>
+
+  <main class="message">
+    <h1>We'll be back soon!</h1>
+    <hr class="line">
+    <p>Website is being updated.</p>
+  </main>
+</body>
+</html>
